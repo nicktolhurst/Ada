@@ -1,0 +1,23 @@
+# Directories #
+################
+bin/
+obj/
+.vs/
+.vscode/
+Properties/launchSettings.json
+
+# Files #
+#########
+appsettings.json
+appsettings.Development.json
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.dll
+*.exe
+*.pdb
+*.cache
+*.vsp
+*.vspx
+*.runtimeconfig.dev.json
