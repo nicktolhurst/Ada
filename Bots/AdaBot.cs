@@ -1,6 +1,4 @@
-﻿// Generated with EchoBot .NET Template version v4.22.0
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
@@ -10,6 +8,15 @@ namespace AdaBot.Bots
 {
     public class AdaBot : ActivityHandler
     {
+        public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken)
+        {
+            var message = $"turnContext.Activity.Type: {turnContext.Activity.Type}";
+
+            await turnContext.SendActivityAsync(MessageFactory.Text(message, message), cancellationToken);
+
+            await base.OnTurnAsync(turnContext, cancellationToken);
+        }
+
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             var replyText = $"Echo: {turnContext.Activity.Text}";
